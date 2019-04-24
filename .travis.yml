@@ -1,0 +1,13 @@
+dist: xenial
+language: node_js
+
+node_js:
+  - '10'
+  - '8'
+
+cache: yarn
+
+scripts:
+  - yarn test
+
+after_success: yarn run coverage
