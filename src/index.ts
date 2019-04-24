@@ -14,15 +14,15 @@ export const convert = (hex: string) => {
   }
 
   const stripped = hex.replace(/^#(.+)/, '$1')
-  const validRX = /[^0-9a-f]/g
-  if (stripped.length !== stripped.replace(validRX, '').length) {
-    throw ERR_INVALID_STR_CHARS
-  }
-
   if (
     !(stripped.length === 3 || stripped.length === 6 || stripped.length === 8)
   ) {
     throw ERR_INVALID_STR_LEN
+  }
+
+  const validRX = /[^0-9a-f]/g
+  if (stripped.length !== stripped.replace(validRX, '').length) {
+    throw ERR_INVALID_STR_CHARS
   }
 
   const tuple =
