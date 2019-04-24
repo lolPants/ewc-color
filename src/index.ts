@@ -1,4 +1,8 @@
-import { INVALID_STR_CHARS, INVALID_STR_HASH, INVALID_STR_LEN } from './errors'
+import {
+  ERR_INVALID_STR_CHARS,
+  ERR_INVALID_STR_HASH,
+  ERR_INVALID_STR_LEN,
+} from './errors'
 
 /**
  * Convert a hex string to an ABGR number
@@ -6,19 +10,19 @@ import { INVALID_STR_CHARS, INVALID_STR_HASH, INVALID_STR_LEN } from './errors'
  */
 export const convert = (hex: string) => {
   if (!hex.startsWith('#')) {
-    throw INVALID_STR_HASH
+    throw ERR_INVALID_STR_HASH
   }
 
   const stripped = hex.replace(/^#(.+)/, '$1')
   const validRX = /[^0-9a-f]/g
   if (stripped.length !== stripped.replace(validRX, '').length) {
-    throw INVALID_STR_CHARS
+    throw ERR_INVALID_STR_CHARS
   }
 
   if (
     !(stripped.length === 3 || stripped.length === 6 || stripped.length === 8)
   ) {
-    throw INVALID_STR_LEN
+    throw ERR_INVALID_STR_LEN
   }
 
   const tuple =
