@@ -1,0 +1,29 @@
+{
+  "name": "ewc-color",
+  "version": "0.1.0",
+  "description": "Convert a Hex string to an ABGR number. Useful for ewc.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": "git@github.com:lolPants/ewc-color.git",
+  "author": "Jack Baron <jackmbaron@gmail.com> (https://www.jackbaron.com)",
+  "keywords": [
+    "ewc",
+    "color",
+    "hex",
+    "number",
+    "string",
+    "rgba",
+    "abgr"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lolPants/ewc-color/issues"
+  },
+  "homepage": "https://github.com/lolPants/ewc-color#readme"
+}
